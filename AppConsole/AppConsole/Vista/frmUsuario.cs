@@ -104,5 +104,10 @@ namespace AppConsole.Vista
         {
             CargarDatos();
         }
+
+        private void dtvUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

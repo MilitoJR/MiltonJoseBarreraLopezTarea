@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MiltonBarrera.Vista;
+using MiltonBarrera.Model;
 
 namespace MiltonBarrera
 {
@@ -16,7 +18,7 @@ namespace MiltonBarrera
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new fMenu());
         }
     }
 }

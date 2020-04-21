@@ -52,6 +52,7 @@
             this.dtvUsuario.Size = new System.Drawing.Size(802, 295);
             this.dtvUsuario.TabIndex = 0;
             this.dtvUsuario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvUsuario_CellClick);
+            this.dtvUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvUsuario_CellContentClick);
             // 
             // button2
             // 
@@ -133,7 +134,7 @@
             this.txtUsuario.Size = new System.Drawing.Size(179, 26);
             this.txtUsuario.TabIndex = 12;
             // 
-            // Usuario
+            // frmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -148,7 +149,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dtvUsuario);
-            this.Name = "Usuario";
+            this.Name = "frmUsuario";
             this.Text = "Usuario";
             this.Load += new System.EventHandler(this.Usuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtvUsuario)).EndInit();
