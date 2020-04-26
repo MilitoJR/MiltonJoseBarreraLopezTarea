@@ -18,7 +18,7 @@ namespace AppConsole
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Loggeo ());
+            Application.Run(new frmMenu ());
         }
     }
 }

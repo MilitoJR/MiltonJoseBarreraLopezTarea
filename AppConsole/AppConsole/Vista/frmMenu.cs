@@ -26,7 +26,14 @@ namespace AppConsole.Vista
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmUsuario user = new frmUsuario();
+            user.MdiParent = this;
             user.Show();
+        }
+        public static frmVentas ventas = new frmVentas();
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ventas.MdiParent = this;
+            ventas.Show();
         }
     }
 }

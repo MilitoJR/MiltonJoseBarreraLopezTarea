@@ -12,22 +12,23 @@ namespace AppConsole.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class usuario
+    public partial class producto
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public usuario()
+        public producto()
         {
-            this.roles_usuario = new HashSet<roles_usuario>();
-            this.tb_venta = new HashSet<tb_venta>();
+            this.detalleVenta = new HashSet<detalleVenta>();
+            this.detalleVenta1 = new HashSet<detalleVenta>();
         }
     
-        public int id { get; set; }
-        public string email { get; set; }
-        public string contraseña { get; set; }
+        public int idProducto { get; set; }
+        public string nombreProducto { get; set; }
+        public string precioProducto { get; set; }
+        public string estadoProducto { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<roles_usuario> roles_usuario { get; set; }
+        public virtual ICollection<detalleVenta> detalleVenta { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_venta> tb_venta { get; set; }
+        public virtual ICollection<detalleVenta> detalleVenta1 { get; set; }
     }
 }
