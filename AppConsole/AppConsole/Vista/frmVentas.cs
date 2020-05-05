@@ -31,11 +31,13 @@ namespace AppConsole.Vista
             {
 
 
-
+                txtIDNumeracion.Text = "1";
                 var tb_v = db.tb_venta;
                 foreach (var iteradatosVenta in tb_v)
                 {
-                    txtIDNumeracion.Text = iteradatosVenta.idVenta.ToString();
+                    int idventa = iteradatosVenta.idVenta;
+                    int suma = idventa + 1;
+                    txtIDNumeracion.Text = suma.ToString();
                     
                     //dtvUsuario.Rows.Add(iteradatosUsuario.email, iteradatosUsuario.contraseña);
                 }
@@ -84,9 +86,8 @@ namespace AppConsole.Vista
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-            dtvVentas.Rows.Add(txtIDNumeracion.Text,txtNombreProducto.Text,txtPrecioProducto.Text,txtCantidad.Text,txtTotal.Text);
-
+           
+          
             try
             {
                 Calculo();
@@ -95,6 +96,21 @@ namespace AppConsole.Vista
             {
 
             }
+
+            dtvVentas.Rows.Add(txtIdProducto.Text, txtNombreProducto.Text, txtPrecioProducto.Text, txtCantidad.Text, txtTotal.Text);
+            Double suma = 0;
+            for (int i = 0; i < dtvVentas.RowCount; i++)
+            {
+                String datosAOperar = dtvVentas.Rows[i].Cells[4].Value.ToString();
+                Double datosConvertidos = Double.Parse(datosAOperar);
+
+
+                suma += datosConvertidos;
+
+                txtTotalFinal.Text = suma.ToString();
+
+            }
+
         }
 
         private void txtCantidad_TextChanged(object sender, EventArgs e)
@@ -122,10 +138,74 @@ namespace AppConsole.Vista
             {
                 txtCantidad.Text = "0";
                 MessageBox.Show("No puedes operar datos menores que 0");
-                txtCantidad.Select();
+                
 
 
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            using(sitema_ventasEntities bd= new sitema_ventasEntities())
+            {
+                tb_venta tb_v = new tb_venta();
+                String comboTipoDoc = cmbTipoDoc.SelectedValue.ToString();
+                String comboCliente = cmbClientes.SelectedValue.ToString();
+               
+                tb_v.idDocumento = int.Parse(comboTipoDoc);
+                tb_v.iDCliente = int.Parse(comboCliente);
+                tb_v.iDUsuario = 1;
+
+                tb_v.totalVenta = Convert.ToDecimal(txtTotalFinal.Text);
+                tb_v.fecha = Convert.ToDateTime(dtpFecha.Text);
+                bd.tb_venta.Add(tb_v);
+                bd.SaveChanges();
+
+                detalleVenta dete = new detalleVenta();
+
+
+                
+
+                
+                
+                    for (int i = 0; i < dtvVentas.RowCount; i++)
+                    {
+                        String IdProducto = dtvVentas.Rows[i].Cells[0].Value.ToString();
+                        int IdProductosConvertidos = Convert.ToInt32(IdProducto);
+
+                        String cantidad = dtvVentas.Rows[i].Cells[3].Value.ToString();
+                        int CantidadConvertidos = Convert.ToInt32(cantidad);
+
+                        String precio = dtvVentas.Rows[i].Cells[2].Value.ToString();
+                        Decimal precioConvertidos = Convert.ToDecimal(precio);
+
+                        String total = dtvVentas.Rows[i].Cells[4].Value.ToString();
+                        Decimal totalConvertidos = Convert.ToDecimal(total);
+
+
+                        dete.idVenta = int.Parse(txtIDNumeracion.Text);
+                        dete.idProducto = IdProductosConvertidos;
+                        dete.cantidad = CantidadConvertidos;
+                        dete.precio = precioConvertidos;
+                        dete.total = totalConvertidos;
+                        bd.detalleVenta.Add(dete);
+                        bd.SaveChanges();
+
+
+
+
+
+                    }
+                
+
+
+
+            }
+        }
+
+        private void txtTotalFinal_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
