@@ -78,7 +78,7 @@
           <Property Name="email" Type="varchar" MaxLength="50" />
           <Property Name="contraseña" Type="varchar" MaxLength="50" />
         </EntityType>
-        <Association Name="FK__detalleVe__iDDet__7C4F7684">
+        <Association Name="FK__detalleVe__iDDet__05D8E0BE">
           <End Role="tb_venta" Type="Self.tb_venta" Multiplicity="1" />
           <End Role="detalleVenta" Type="Self.detalleVenta" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -90,7 +90,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__detalleVe__idPro__7D439ABD">
+        <Association Name="FK__detalleVe__iDDet__07C12930">
+          <End Role="tb_venta" Type="Self.tb_venta" Multiplicity="1" />
+          <End Role="detalleVenta" Type="Self.detalleVenta" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="iDDetalleVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__iDDet__0B91BA14">
+          <End Role="tb_venta" Type="Self.tb_venta" Multiplicity="1" />
+          <End Role="detalleVenta" Type="Self.detalleVenta" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="iDDetalleVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idPro__08B54D69">
           <End Role="producto" Type="Self.producto" Multiplicity="0..1" />
           <End Role="detalleVenta" Type="Self.detalleVenta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -102,19 +126,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__detalleVe__idPro__7F2BE32F">
-          <End Role="producto" Type="Self.producto" Multiplicity="0..1" />
-          <End Role="detalleVenta" Type="Self.detalleVenta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="producto">
-              <PropertyRef Name="idProducto" />
-            </Principal>
-            <Dependent Role="detalleVenta">
-              <PropertyRef Name="idProducto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__detalleVe__idVen__01142BA1">
+        <Association Name="FK__detalleVe__idVen__06CD04F7">
           <End Role="tb_venta" Type="Self.tb_venta" Multiplicity="0..1" />
           <End Role="detalleVenta" Type="Self.detalleVenta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -126,7 +138,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__detalleVe__idVen__02084FDA">
+        <Association Name="FK__detalleVe__idVen__09A971A2">
           <End Role="tb_venta" Type="Self.tb_venta" Multiplicity="0..1" />
           <End Role="detalleVenta" Type="Self.detalleVenta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -138,7 +150,163 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__detalleVe__idVen__02FC7413">
+        <Association Name="FK__detalleVe__idVen__0A9D95DB">
+          <End Role="tb_venta" Type="Self.tb_venta" Multiplicity="0..1" />
+          <End Role="detalleVenta" Type="Self.detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__0C85DE4D">
+          <End Role="tb_venta" Type="Self.tb_venta" Multiplicity="0..1" />
+          <End Role="detalleVenta" Type="Self.detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__0D7A0286">
+          <End Role="tb_venta" Type="Self.tb_venta" Multiplicity="0..1" />
+          <End Role="detalleVenta" Type="Self.detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__0E6E26BF">
+          <End Role="tb_venta" Type="Self.tb_venta" Multiplicity="0..1" />
+          <End Role="detalleVenta" Type="Self.detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__0F624AF8">
+          <End Role="tb_venta" Type="Self.tb_venta" Multiplicity="0..1" />
+          <End Role="detalleVenta" Type="Self.detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__10566F31">
+          <End Role="tb_venta" Type="Self.tb_venta" Multiplicity="0..1" />
+          <End Role="detalleVenta" Type="Self.detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__114A936A">
+          <End Role="tb_venta" Type="Self.tb_venta" Multiplicity="0..1" />
+          <End Role="detalleVenta" Type="Self.detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__123EB7A3">
+          <End Role="tb_venta" Type="Self.tb_venta" Multiplicity="0..1" />
+          <End Role="detalleVenta" Type="Self.detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__1332DBDC">
+          <End Role="tb_venta" Type="Self.tb_venta" Multiplicity="0..1" />
+          <End Role="detalleVenta" Type="Self.detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__14270015">
+          <End Role="tb_venta" Type="Self.tb_venta" Multiplicity="0..1" />
+          <End Role="detalleVenta" Type="Self.detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__151B244E">
+          <End Role="tb_venta" Type="Self.tb_venta" Multiplicity="0..1" />
+          <End Role="detalleVenta" Type="Self.detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__160F4887">
+          <End Role="tb_venta" Type="Self.tb_venta" Multiplicity="0..1" />
+          <End Role="detalleVenta" Type="Self.detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__17036CC0">
+          <End Role="tb_venta" Type="Self.tb_venta" Multiplicity="0..1" />
+          <End Role="detalleVenta" Type="Self.detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__17F790F9">
           <End Role="tb_venta" Type="Self.tb_venta" Multiplicity="0..1" />
           <End Role="detalleVenta" Type="Self.detalleVenta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -207,27 +375,83 @@
           <EntitySet Name="tb_documento" EntityType="Self.tb_documento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_venta" EntityType="Self.tb_venta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__detalleVe__iDDet__7C4F7684" Association="Self.FK__detalleVe__iDDet__7C4F7684">
+          <AssociationSet Name="FK__detalleVe__iDDet__05D8E0BE" Association="Self.FK__detalleVe__iDDet__05D8E0BE">
             <End Role="tb_venta" EntitySet="tb_venta" />
             <End Role="detalleVenta" EntitySet="detalleVenta" />
           </AssociationSet>
-          <AssociationSet Name="FK__detalleVe__idPro__7D439ABD" Association="Self.FK__detalleVe__idPro__7D439ABD">
+          <AssociationSet Name="FK__detalleVe__iDDet__07C12930" Association="Self.FK__detalleVe__iDDet__07C12930">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__iDDet__0B91BA14" Association="Self.FK__detalleVe__iDDet__0B91BA14">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idPro__08B54D69" Association="Self.FK__detalleVe__idPro__08B54D69">
             <End Role="producto" EntitySet="producto" />
             <End Role="detalleVenta" EntitySet="detalleVenta" />
           </AssociationSet>
-          <AssociationSet Name="FK__detalleVe__idPro__7F2BE32F" Association="Self.FK__detalleVe__idPro__7F2BE32F">
-            <End Role="producto" EntitySet="producto" />
-            <End Role="detalleVenta" EntitySet="detalleVenta" />
-          </AssociationSet>
-          <AssociationSet Name="FK__detalleVe__idVen__01142BA1" Association="Self.FK__detalleVe__idVen__01142BA1">
+          <AssociationSet Name="FK__detalleVe__idVen__06CD04F7" Association="Self.FK__detalleVe__idVen__06CD04F7">
             <End Role="tb_venta" EntitySet="tb_venta" />
             <End Role="detalleVenta" EntitySet="detalleVenta" />
           </AssociationSet>
-          <AssociationSet Name="FK__detalleVe__idVen__02084FDA" Association="Self.FK__detalleVe__idVen__02084FDA">
+          <AssociationSet Name="FK__detalleVe__idVen__09A971A2" Association="Self.FK__detalleVe__idVen__09A971A2">
             <End Role="tb_venta" EntitySet="tb_venta" />
             <End Role="detalleVenta" EntitySet="detalleVenta" />
           </AssociationSet>
-          <AssociationSet Name="FK__detalleVe__idVen__02FC7413" Association="Self.FK__detalleVe__idVen__02FC7413">
+          <AssociationSet Name="FK__detalleVe__idVen__0A9D95DB" Association="Self.FK__detalleVe__idVen__0A9D95DB">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__0C85DE4D" Association="Self.FK__detalleVe__idVen__0C85DE4D">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__0D7A0286" Association="Self.FK__detalleVe__idVen__0D7A0286">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__0E6E26BF" Association="Self.FK__detalleVe__idVen__0E6E26BF">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__0F624AF8" Association="Self.FK__detalleVe__idVen__0F624AF8">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__10566F31" Association="Self.FK__detalleVe__idVen__10566F31">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__114A936A" Association="Self.FK__detalleVe__idVen__114A936A">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__123EB7A3" Association="Self.FK__detalleVe__idVen__123EB7A3">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__1332DBDC" Association="Self.FK__detalleVe__idVen__1332DBDC">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__14270015" Association="Self.FK__detalleVe__idVen__14270015">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__151B244E" Association="Self.FK__detalleVe__idVen__151B244E">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__160F4887" Association="Self.FK__detalleVe__idVen__160F4887">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__17036CC0" Association="Self.FK__detalleVe__idVen__17036CC0">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__17F790F9" Association="Self.FK__detalleVe__idVen__17F790F9">
             <End Role="tb_venta" EntitySet="tb_venta" />
             <End Role="detalleVenta" EntitySet="detalleVenta" />
           </AssociationSet>
@@ -269,36 +493,11 @@
             <End Role="usuario" EntitySet="usuario" />
             <End Role="roles_usuario" EntitySet="roles_usuario" />
           </AssociationSet>
-          <EntitySet Name="detalleVenta" EntityType="sitema_ventasModel.detalleVenta" />
           <EntitySet Name="producto" EntityType="sitema_ventasModel.producto" />
           <EntitySet Name="sysdiagrams" EntityType="sitema_ventasModel.sysdiagrams" />
           <EntitySet Name="tb_cliente" EntityType="sitema_ventasModel.tb_cliente" />
           <EntitySet Name="tb_documento" EntityType="sitema_ventasModel.tb_documento" />
           <EntitySet Name="tb_venta" EntityType="sitema_ventasModel.tb_venta" />
-          <AssociationSet Name="FK__detalleVe__iDDet__7C4F7684" Association="sitema_ventasModel.FK__detalleVe__iDDet__7C4F7684">
-            <End Role="tb_venta" EntitySet="tb_venta" />
-            <End Role="detalleVenta" EntitySet="detalleVenta" />
-          </AssociationSet>
-          <AssociationSet Name="FK__detalleVe__idPro__7D439ABD" Association="sitema_ventasModel.FK__detalleVe__idPro__7D439ABD">
-            <End Role="producto" EntitySet="producto" />
-            <End Role="detalleVenta" EntitySet="detalleVenta" />
-          </AssociationSet>
-          <AssociationSet Name="FK__detalleVe__idPro__7F2BE32F" Association="sitema_ventasModel.FK__detalleVe__idPro__7F2BE32F">
-            <End Role="producto" EntitySet="producto" />
-            <End Role="detalleVenta" EntitySet="detalleVenta" />
-          </AssociationSet>
-          <AssociationSet Name="FK__detalleVe__idVen__01142BA1" Association="sitema_ventasModel.FK__detalleVe__idVen__01142BA1">
-            <End Role="tb_venta" EntitySet="tb_venta" />
-            <End Role="detalleVenta" EntitySet="detalleVenta" />
-          </AssociationSet>
-          <AssociationSet Name="FK__detalleVe__idVen__02084FDA" Association="sitema_ventasModel.FK__detalleVe__idVen__02084FDA">
-            <End Role="tb_venta" EntitySet="tb_venta" />
-            <End Role="detalleVenta" EntitySet="detalleVenta" />
-          </AssociationSet>
-          <AssociationSet Name="FK__detalleVe__idVen__02FC7413" Association="sitema_ventasModel.FK__detalleVe__idVen__02FC7413">
-            <End Role="tb_venta" EntitySet="tb_venta" />
-            <End Role="detalleVenta" EntitySet="detalleVenta" />
-          </AssociationSet>
           <AssociationSet Name="FK__tb_venta__iDClie__787EE5A0" Association="sitema_ventasModel.FK__tb_venta__iDClie__787EE5A0">
             <End Role="tb_cliente" EntitySet="tb_cliente" />
             <End Role="tb_venta" EntitySet="tb_venta" />
@@ -310,6 +509,87 @@
           <AssociationSet Name="FK__tb_venta__iDUsua__778AC167" Association="sitema_ventasModel.FK__tb_venta__iDUsua__778AC167">
             <End Role="usuario" EntitySet="usuario" />
             <End Role="tb_venta" EntitySet="tb_venta" />
+          </AssociationSet>
+          <EntitySet Name="detalleVenta" EntityType="sitema_ventasModel.detalleVenta" />
+          <AssociationSet Name="FK__detalleVe__iDDet__05D8E0BE" Association="sitema_ventasModel.FK__detalleVe__iDDet__05D8E0BE">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__iDDet__07C12930" Association="sitema_ventasModel.FK__detalleVe__iDDet__07C12930">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__iDDet__0B91BA14" Association="sitema_ventasModel.FK__detalleVe__iDDet__0B91BA14">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idPro__08B54D69" Association="sitema_ventasModel.FK__detalleVe__idPro__08B54D69">
+            <End Role="producto" EntitySet="producto" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__06CD04F7" Association="sitema_ventasModel.FK__detalleVe__idVen__06CD04F7">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__09A971A2" Association="sitema_ventasModel.FK__detalleVe__idVen__09A971A2">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__0A9D95DB" Association="sitema_ventasModel.FK__detalleVe__idVen__0A9D95DB">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__0C85DE4D" Association="sitema_ventasModel.FK__detalleVe__idVen__0C85DE4D">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__0D7A0286" Association="sitema_ventasModel.FK__detalleVe__idVen__0D7A0286">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__0E6E26BF" Association="sitema_ventasModel.FK__detalleVe__idVen__0E6E26BF">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__0F624AF8" Association="sitema_ventasModel.FK__detalleVe__idVen__0F624AF8">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__10566F31" Association="sitema_ventasModel.FK__detalleVe__idVen__10566F31">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__114A936A" Association="sitema_ventasModel.FK__detalleVe__idVen__114A936A">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__123EB7A3" Association="sitema_ventasModel.FK__detalleVe__idVen__123EB7A3">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__1332DBDC" Association="sitema_ventasModel.FK__detalleVe__idVen__1332DBDC">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__14270015" Association="sitema_ventasModel.FK__detalleVe__idVen__14270015">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__151B244E" Association="sitema_ventasModel.FK__detalleVe__idVen__151B244E">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__160F4887" Association="sitema_ventasModel.FK__detalleVe__idVen__160F4887">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__17036CC0" Association="sitema_ventasModel.FK__detalleVe__idVen__17036CC0">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleVe__idVen__17F790F9" Association="sitema_ventasModel.FK__detalleVe__idVen__17F790F9">
+            <End Role="tb_venta" EntitySet="tb_venta" />
+            <End Role="detalleVenta" EntitySet="detalleVenta" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="roles_usuario">
@@ -333,23 +613,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="detalleVenta">
-          <Key>
-            <PropertyRef Name="iDDetalleVenta" />
-          </Key>
-          <Property Name="iDDetalleVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idVenta" Type="Int32" />
-          <Property Name="idProducto" Type="Int32" />
-          <Property Name="cantidad" Type="Int32" />
-          <Property Name="precio" Type="Decimal" Precision="18" Scale="5" />
-          <Property Name="total" Type="Decimal" Precision="18" Scale="5" />
-          <NavigationProperty Name="tb_venta" Relationship="sitema_ventasModel.FK__detalleVe__iDDet__7C4F7684" FromRole="detalleVenta" ToRole="tb_venta" />
-          <NavigationProperty Name="producto" Relationship="sitema_ventasModel.FK__detalleVe__idPro__7D439ABD" FromRole="detalleVenta" ToRole="producto" />
-          <NavigationProperty Name="producto1" Relationship="sitema_ventasModel.FK__detalleVe__idPro__7F2BE32F" FromRole="detalleVenta" ToRole="producto" />
-          <NavigationProperty Name="tb_venta1" Relationship="sitema_ventasModel.FK__detalleVe__idVen__01142BA1" FromRole="detalleVenta" ToRole="tb_venta" />
-          <NavigationProperty Name="tb_venta2" Relationship="sitema_ventasModel.FK__detalleVe__idVen__02084FDA" FromRole="detalleVenta" ToRole="tb_venta" />
-          <NavigationProperty Name="tb_venta3" Relationship="sitema_ventasModel.FK__detalleVe__idVen__02FC7413" FromRole="detalleVenta" ToRole="tb_venta" />
-        </EntityType>
         <EntityType Name="producto">
           <Key>
             <PropertyRef Name="idProducto" />
@@ -358,9 +621,8 @@
           <Property Name="nombreProducto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="precioProducto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="estadoProducto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="detalleVenta" Relationship="sitema_ventasModel.FK__detalleVe__idPro__7D439ABD" FromRole="producto" ToRole="detalleVenta" />
-          <NavigationProperty Name="detalleVenta1" Relationship="sitema_ventasModel.FK__detalleVe__idPro__7F2BE32F" FromRole="producto" ToRole="detalleVenta" />
-        </EntityType>
+          <NavigationProperty Name="detalleVenta" Relationship="sitema_ventasModel.FK__detalleVe__idPro__08B54D69" FromRole="producto" ToRole="detalleVenta" />
+          </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -399,86 +661,29 @@
           <Property Name="iDUsuario" Type="Int32" />
           <Property Name="totalVenta" Type="Decimal" Precision="18" Scale="5" />
           <Property Name="fecha" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="detalleVenta" Relationship="sitema_ventasModel.FK__detalleVe__iDDet__7C4F7684" FromRole="tb_venta" ToRole="detalleVenta" />
-          <NavigationProperty Name="detalleVenta1" Relationship="sitema_ventasModel.FK__detalleVe__idVen__01142BA1" FromRole="tb_venta" ToRole="detalleVenta" />
-          <NavigationProperty Name="detalleVenta2" Relationship="sitema_ventasModel.FK__detalleVe__idVen__02084FDA" FromRole="tb_venta" ToRole="detalleVenta" />
-          <NavigationProperty Name="detalleVenta3" Relationship="sitema_ventasModel.FK__detalleVe__idVen__02FC7413" FromRole="tb_venta" ToRole="detalleVenta" />
           <NavigationProperty Name="tb_cliente" Relationship="sitema_ventasModel.FK__tb_venta__iDClie__787EE5A0" FromRole="tb_venta" ToRole="tb_cliente" />
           <NavigationProperty Name="tb_documento" Relationship="sitema_ventasModel.FK__tb_venta__idDocu__797309D9" FromRole="tb_venta" ToRole="tb_documento" />
           <NavigationProperty Name="usuario" Relationship="sitema_ventasModel.FK__tb_venta__iDUsua__778AC167" FromRole="tb_venta" ToRole="usuario" />
+          <NavigationProperty Name="detalleVenta" Relationship="sitema_ventasModel.FK__detalleVe__iDDet__05D8E0BE" FromRole="tb_venta" ToRole="detalleVenta" />
+          <NavigationProperty Name="detalleVenta1" Relationship="sitema_ventasModel.FK__detalleVe__iDDet__07C12930" FromRole="tb_venta" ToRole="detalleVenta" />
+          <NavigationProperty Name="detalleVenta2" Relationship="sitema_ventasModel.FK__detalleVe__iDDet__0B91BA14" FromRole="tb_venta" ToRole="detalleVenta" />
+          <NavigationProperty Name="detalleVenta3" Relationship="sitema_ventasModel.FK__detalleVe__idVen__06CD04F7" FromRole="tb_venta" ToRole="detalleVenta" />
+          <NavigationProperty Name="detalleVenta4" Relationship="sitema_ventasModel.FK__detalleVe__idVen__09A971A2" FromRole="tb_venta" ToRole="detalleVenta" />
+          <NavigationProperty Name="detalleVenta5" Relationship="sitema_ventasModel.FK__detalleVe__idVen__0A9D95DB" FromRole="tb_venta" ToRole="detalleVenta" />
+          <NavigationProperty Name="detalleVenta6" Relationship="sitema_ventasModel.FK__detalleVe__idVen__0C85DE4D" FromRole="tb_venta" ToRole="detalleVenta" />
+          <NavigationProperty Name="detalleVenta7" Relationship="sitema_ventasModel.FK__detalleVe__idVen__0D7A0286" FromRole="tb_venta" ToRole="detalleVenta" />
+          <NavigationProperty Name="detalleVenta8" Relationship="sitema_ventasModel.FK__detalleVe__idVen__0E6E26BF" FromRole="tb_venta" ToRole="detalleVenta" />
+          <NavigationProperty Name="detalleVenta9" Relationship="sitema_ventasModel.FK__detalleVe__idVen__0F624AF8" FromRole="tb_venta" ToRole="detalleVenta" />
+          <NavigationProperty Name="detalleVenta10" Relationship="sitema_ventasModel.FK__detalleVe__idVen__10566F31" FromRole="tb_venta" ToRole="detalleVenta" />
+          <NavigationProperty Name="detalleVenta11" Relationship="sitema_ventasModel.FK__detalleVe__idVen__114A936A" FromRole="tb_venta" ToRole="detalleVenta" />
+          <NavigationProperty Name="detalleVenta12" Relationship="sitema_ventasModel.FK__detalleVe__idVen__123EB7A3" FromRole="tb_venta" ToRole="detalleVenta" />
+          <NavigationProperty Name="detalleVenta13" Relationship="sitema_ventasModel.FK__detalleVe__idVen__1332DBDC" FromRole="tb_venta" ToRole="detalleVenta" />
+          <NavigationProperty Name="detalleVenta14" Relationship="sitema_ventasModel.FK__detalleVe__idVen__14270015" FromRole="tb_venta" ToRole="detalleVenta" />
+          <NavigationProperty Name="detalleVenta15" Relationship="sitema_ventasModel.FK__detalleVe__idVen__151B244E" FromRole="tb_venta" ToRole="detalleVenta" />
+          <NavigationProperty Name="detalleVenta16" Relationship="sitema_ventasModel.FK__detalleVe__idVen__160F4887" FromRole="tb_venta" ToRole="detalleVenta" />
+          <NavigationProperty Name="detalleVenta17" Relationship="sitema_ventasModel.FK__detalleVe__idVen__17036CC0" FromRole="tb_venta" ToRole="detalleVenta" />
+          <NavigationProperty Name="detalleVenta18" Relationship="sitema_ventasModel.FK__detalleVe__idVen__17F790F9" FromRole="tb_venta" ToRole="detalleVenta" />
         </EntityType>
-        <Association Name="FK__detalleVe__iDDet__7C4F7684">
-          <End Type="sitema_ventasModel.tb_venta" Role="tb_venta" Multiplicity="1" />
-          <End Type="sitema_ventasModel.detalleVenta" Role="detalleVenta" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="tb_venta">
-              <PropertyRef Name="idVenta" />
-            </Principal>
-            <Dependent Role="detalleVenta">
-              <PropertyRef Name="iDDetalleVenta" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__detalleVe__idPro__7D439ABD">
-          <End Type="sitema_ventasModel.producto" Role="producto" Multiplicity="0..1" />
-          <End Type="sitema_ventasModel.detalleVenta" Role="detalleVenta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="producto">
-              <PropertyRef Name="idProducto" />
-            </Principal>
-            <Dependent Role="detalleVenta">
-              <PropertyRef Name="idProducto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__detalleVe__idPro__7F2BE32F">
-          <End Type="sitema_ventasModel.producto" Role="producto" Multiplicity="0..1" />
-          <End Type="sitema_ventasModel.detalleVenta" Role="detalleVenta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="producto">
-              <PropertyRef Name="idProducto" />
-            </Principal>
-            <Dependent Role="detalleVenta">
-              <PropertyRef Name="idProducto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__detalleVe__idVen__01142BA1">
-          <End Type="sitema_ventasModel.tb_venta" Role="tb_venta" Multiplicity="0..1" />
-          <End Type="sitema_ventasModel.detalleVenta" Role="detalleVenta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_venta">
-              <PropertyRef Name="idVenta" />
-            </Principal>
-            <Dependent Role="detalleVenta">
-              <PropertyRef Name="idVenta" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__detalleVe__idVen__02084FDA">
-          <End Type="sitema_ventasModel.tb_venta" Role="tb_venta" Multiplicity="0..1" />
-          <End Type="sitema_ventasModel.detalleVenta" Role="detalleVenta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_venta">
-              <PropertyRef Name="idVenta" />
-            </Principal>
-            <Dependent Role="detalleVenta">
-              <PropertyRef Name="idVenta" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__detalleVe__idVen__02FC7413">
-          <End Type="sitema_ventasModel.tb_venta" Role="tb_venta" Multiplicity="0..1" />
-          <End Type="sitema_ventasModel.detalleVenta" Role="detalleVenta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_venta">
-              <PropertyRef Name="idVenta" />
-            </Principal>
-            <Dependent Role="detalleVenta">
-              <PropertyRef Name="idVenta" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__tb_venta__iDClie__787EE5A0">
           <End Type="sitema_ventasModel.tb_cliente" Role="tb_cliente" Multiplicity="0..1" />
           <End Type="sitema_ventasModel.tb_venta" Role="tb_venta" Multiplicity="*" />
@@ -515,6 +720,277 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="detalleVenta">
+          <Key>
+            <PropertyRef Name="iDDetalleVenta" />
+          </Key>
+          <Property Name="iDDetalleVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idVenta" Type="Int32" />
+          <Property Name="idProducto" Type="Int32" />
+          <Property Name="cantidad" Type="Int32" />
+          <Property Name="precio" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="total" Type="Decimal" Precision="18" Scale="5" />
+          <NavigationProperty Name="tb_venta" Relationship="sitema_ventasModel.FK__detalleVe__iDDet__05D8E0BE" FromRole="detalleVenta" ToRole="tb_venta" />
+          <NavigationProperty Name="tb_venta1" Relationship="sitema_ventasModel.FK__detalleVe__iDDet__07C12930" FromRole="detalleVenta" ToRole="tb_venta" />
+          <NavigationProperty Name="tb_venta2" Relationship="sitema_ventasModel.FK__detalleVe__iDDet__0B91BA14" FromRole="detalleVenta" ToRole="tb_venta" />
+          <NavigationProperty Name="producto" Relationship="sitema_ventasModel.FK__detalleVe__idPro__08B54D69" FromRole="detalleVenta" ToRole="producto" />
+          <NavigationProperty Name="tb_venta3" Relationship="sitema_ventasModel.FK__detalleVe__idVen__06CD04F7" FromRole="detalleVenta" ToRole="tb_venta" />
+          <NavigationProperty Name="tb_venta4" Relationship="sitema_ventasModel.FK__detalleVe__idVen__09A971A2" FromRole="detalleVenta" ToRole="tb_venta" />
+          <NavigationProperty Name="tb_venta5" Relationship="sitema_ventasModel.FK__detalleVe__idVen__0A9D95DB" FromRole="detalleVenta" ToRole="tb_venta" />
+          <NavigationProperty Name="tb_venta6" Relationship="sitema_ventasModel.FK__detalleVe__idVen__0C85DE4D" FromRole="detalleVenta" ToRole="tb_venta" />
+          <NavigationProperty Name="tb_venta7" Relationship="sitema_ventasModel.FK__detalleVe__idVen__0D7A0286" FromRole="detalleVenta" ToRole="tb_venta" />
+          <NavigationProperty Name="tb_venta8" Relationship="sitema_ventasModel.FK__detalleVe__idVen__0E6E26BF" FromRole="detalleVenta" ToRole="tb_venta" />
+          <NavigationProperty Name="tb_venta9" Relationship="sitema_ventasModel.FK__detalleVe__idVen__0F624AF8" FromRole="detalleVenta" ToRole="tb_venta" />
+          <NavigationProperty Name="tb_venta10" Relationship="sitema_ventasModel.FK__detalleVe__idVen__10566F31" FromRole="detalleVenta" ToRole="tb_venta" />
+          <NavigationProperty Name="tb_venta11" Relationship="sitema_ventasModel.FK__detalleVe__idVen__114A936A" FromRole="detalleVenta" ToRole="tb_venta" />
+          <NavigationProperty Name="tb_venta12" Relationship="sitema_ventasModel.FK__detalleVe__idVen__123EB7A3" FromRole="detalleVenta" ToRole="tb_venta" />
+          <NavigationProperty Name="tb_venta13" Relationship="sitema_ventasModel.FK__detalleVe__idVen__1332DBDC" FromRole="detalleVenta" ToRole="tb_venta" />
+          <NavigationProperty Name="tb_venta14" Relationship="sitema_ventasModel.FK__detalleVe__idVen__14270015" FromRole="detalleVenta" ToRole="tb_venta" />
+          <NavigationProperty Name="tb_venta15" Relationship="sitema_ventasModel.FK__detalleVe__idVen__151B244E" FromRole="detalleVenta" ToRole="tb_venta" />
+          <NavigationProperty Name="tb_venta16" Relationship="sitema_ventasModel.FK__detalleVe__idVen__160F4887" FromRole="detalleVenta" ToRole="tb_venta" />
+          <NavigationProperty Name="tb_venta17" Relationship="sitema_ventasModel.FK__detalleVe__idVen__17036CC0" FromRole="detalleVenta" ToRole="tb_venta" />
+          <NavigationProperty Name="tb_venta18" Relationship="sitema_ventasModel.FK__detalleVe__idVen__17F790F9" FromRole="detalleVenta" ToRole="tb_venta" />
+        </EntityType>
+        <Association Name="FK__detalleVe__iDDet__05D8E0BE">
+          <End Type="sitema_ventasModel.tb_venta" Role="tb_venta" Multiplicity="1" />
+          <End Type="sitema_ventasModel.detalleVenta" Role="detalleVenta" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="iDDetalleVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__iDDet__07C12930">
+          <End Type="sitema_ventasModel.tb_venta" Role="tb_venta" Multiplicity="1" />
+          <End Type="sitema_ventasModel.detalleVenta" Role="detalleVenta" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="iDDetalleVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__iDDet__0B91BA14">
+          <End Type="sitema_ventasModel.tb_venta" Role="tb_venta" Multiplicity="1" />
+          <End Type="sitema_ventasModel.detalleVenta" Role="detalleVenta" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="iDDetalleVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idPro__08B54D69">
+          <End Type="sitema_ventasModel.producto" Role="producto" Multiplicity="0..1" />
+          <End Type="sitema_ventasModel.detalleVenta" Role="detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="producto">
+              <PropertyRef Name="idProducto" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__06CD04F7">
+          <End Type="sitema_ventasModel.tb_venta" Role="tb_venta" Multiplicity="0..1" />
+          <End Type="sitema_ventasModel.detalleVenta" Role="detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__09A971A2">
+          <End Type="sitema_ventasModel.tb_venta" Role="tb_venta" Multiplicity="0..1" />
+          <End Type="sitema_ventasModel.detalleVenta" Role="detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__0A9D95DB">
+          <End Type="sitema_ventasModel.tb_venta" Role="tb_venta" Multiplicity="0..1" />
+          <End Type="sitema_ventasModel.detalleVenta" Role="detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__0C85DE4D">
+          <End Type="sitema_ventasModel.tb_venta" Role="tb_venta" Multiplicity="0..1" />
+          <End Type="sitema_ventasModel.detalleVenta" Role="detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__0D7A0286">
+          <End Type="sitema_ventasModel.tb_venta" Role="tb_venta" Multiplicity="0..1" />
+          <End Type="sitema_ventasModel.detalleVenta" Role="detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__0E6E26BF">
+          <End Type="sitema_ventasModel.tb_venta" Role="tb_venta" Multiplicity="0..1" />
+          <End Type="sitema_ventasModel.detalleVenta" Role="detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__0F624AF8">
+          <End Type="sitema_ventasModel.tb_venta" Role="tb_venta" Multiplicity="0..1" />
+          <End Type="sitema_ventasModel.detalleVenta" Role="detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__10566F31">
+          <End Type="sitema_ventasModel.tb_venta" Role="tb_venta" Multiplicity="0..1" />
+          <End Type="sitema_ventasModel.detalleVenta" Role="detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__114A936A">
+          <End Type="sitema_ventasModel.tb_venta" Role="tb_venta" Multiplicity="0..1" />
+          <End Type="sitema_ventasModel.detalleVenta" Role="detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__123EB7A3">
+          <End Type="sitema_ventasModel.tb_venta" Role="tb_venta" Multiplicity="0..1" />
+          <End Type="sitema_ventasModel.detalleVenta" Role="detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__1332DBDC">
+          <End Type="sitema_ventasModel.tb_venta" Role="tb_venta" Multiplicity="0..1" />
+          <End Type="sitema_ventasModel.detalleVenta" Role="detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__14270015">
+          <End Type="sitema_ventasModel.tb_venta" Role="tb_venta" Multiplicity="0..1" />
+          <End Type="sitema_ventasModel.detalleVenta" Role="detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__151B244E">
+          <End Type="sitema_ventasModel.tb_venta" Role="tb_venta" Multiplicity="0..1" />
+          <End Type="sitema_ventasModel.detalleVenta" Role="detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__160F4887">
+          <End Type="sitema_ventasModel.tb_venta" Role="tb_venta" Multiplicity="0..1" />
+          <End Type="sitema_ventasModel.detalleVenta" Role="detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__17036CC0">
+          <End Type="sitema_ventasModel.tb_venta" Role="tb_venta" Multiplicity="0..1" />
+          <End Type="sitema_ventasModel.detalleVenta" Role="detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleVe__idVen__17F790F9">
+          <End Type="sitema_ventasModel.tb_venta" Role="tb_venta" Multiplicity="0..1" />
+          <End Type="sitema_ventasModel.detalleVenta" Role="detalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="detalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -536,18 +1012,6 @@
                 <ScalarProperty Name="tipo_rol" ColumnName="tipo_rol" />
                 <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
                 <ScalarProperty Name="id_Rol_usuario" ColumnName="id_Rol_usuario" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="detalleVenta">
-            <EntityTypeMapping TypeName="sitema_ventasModel.detalleVenta">
-              <MappingFragment StoreEntitySet="detalleVenta">
-                <ScalarProperty Name="total" ColumnName="total" />
-                <ScalarProperty Name="precio" ColumnName="precio" />
-                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-                <ScalarProperty Name="idProducto" ColumnName="idProducto" />
-                <ScalarProperty Name="idVenta" ColumnName="idVenta" />
-                <ScalarProperty Name="iDDetalleVenta" ColumnName="iDDetalleVenta" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -599,6 +1063,18 @@
                 <ScalarProperty Name="iDCliente" ColumnName="iDCliente" />
                 <ScalarProperty Name="idDocumento" ColumnName="idDocumento" />
                 <ScalarProperty Name="idVenta" ColumnName="idVenta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="detalleVenta">
+            <EntityTypeMapping TypeName="sitema_ventasModel.detalleVenta">
+              <MappingFragment StoreEntitySet="detalleVenta">
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+                <ScalarProperty Name="idVenta" ColumnName="idVenta" />
+                <ScalarProperty Name="iDDetalleVenta" ColumnName="iDDetalleVenta" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

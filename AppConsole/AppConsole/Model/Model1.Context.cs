@@ -27,11 +27,11 @@ namespace AppConsole.Model
     
         public virtual DbSet<usuario> usuario { get; set; }
         public virtual DbSet<roles_usuario> roles_usuario { get; set; }
-        public virtual DbSet<detalleVenta> detalleVenta { get; set; }
         public virtual DbSet<producto> producto { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<tb_cliente> tb_cliente { get; set; }
         public virtual DbSet<tb_documento> tb_documento { get; set; }
         public virtual DbSet<tb_venta> tb_venta { get; set; }
+        public virtual DbSet<detalleVenta> detalleVenta { get; set; }
     }
 }

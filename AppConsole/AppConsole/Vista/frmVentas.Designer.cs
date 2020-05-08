@@ -40,7 +40,7 @@
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.txtIdProducto = new System.Windows.Forms.TextBox();
             this.txtNombreProducto = new System.Windows.Forms.TextBox();
             this.txtPrecioProducto = new System.Windows.Forms.TextBox();
@@ -52,12 +52,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.txtTotalFinal = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtvVentas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -172,13 +172,14 @@
             this.Total.Name = "Total";
             this.Total.ReadOnly = true;
             // 
-            // textBox1
+            // txtBusqueda
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(419, 163);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(300, 30);
-            this.textBox1.TabIndex = 7;
+            this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusqueda.Location = new System.Drawing.Point(419, 163);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(300, 30);
+            this.txtBusqueda.TabIndex = 7;
+            this.txtBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
             // 
             // txtIdProducto
             // 
@@ -215,6 +216,7 @@
             this.txtCantidad.Size = new System.Drawing.Size(112, 30);
             this.txtCantidad.TabIndex = 11;
             this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
+            this.txtCantidad.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCantidad_KeyUp);
             // 
             // txtTotal
             // 
@@ -285,27 +287,16 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "Total";
             // 
-            // button1
+            // btnBuscar
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(741, 158);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 41);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1080, 295);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(135, 42);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Agregar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(741, 158);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(95, 41);
+            this.btnBuscar.TabIndex = 19;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.button1_Click);
             // 
             // label10
             // 
@@ -319,23 +310,12 @@
             // 
             // txtTotalFinal
             // 
+            this.txtTotalFinal.Enabled = false;
             this.txtTotalFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalFinal.Location = new System.Drawing.Point(557, 692);
             this.txtTotalFinal.Name = "txtTotalFinal";
             this.txtTotalFinal.Size = new System.Drawing.Size(184, 44);
             this.txtTotalFinal.TabIndex = 22;
-            this.txtTotalFinal.TextChanged += new System.EventHandler(this.txtTotalFinal_TextChanged);
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(923, 723);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(209, 39);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Guardar Venta";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // dtpFecha
             // 
@@ -345,19 +325,38 @@
             this.dtpFecha.Size = new System.Drawing.Size(223, 26);
             this.dtpFecha.TabIndex = 24;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(919, 690);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(166, 57);
+            this.button3.TabIndex = 25;
+            this.button3.Text = "Guardar Venta";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(1086, 296);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(120, 45);
+            this.btnAgregar.TabIndex = 26;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // frmVentas
             // 
-            this.AcceptButton = this.button2;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1248, 808);
-            this.Controls.Add(this.dtpFecha);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.button3);
+            this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.txtTotalFinal);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -369,7 +368,7 @@
             this.Controls.Add(this.txtPrecioProducto);
             this.Controls.Add(this.txtNombreProducto);
             this.Controls.Add(this.txtIdProducto);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.dtvVentas);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtIDNumeracion);
@@ -398,7 +397,7 @@
         private System.Windows.Forms.TextBox txtIDNumeracion;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dtvVentas;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBusqueda;
         public System.Windows.Forms.TextBox txtIdProducto;
         public System.Windows.Forms.TextBox txtNombreProducto;
         public System.Windows.Forms.TextBox txtPrecioProducto;
@@ -409,8 +408,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodigoPro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
@@ -419,7 +417,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtTotalFinal;
         public System.Windows.Forms.TextBox txtCantidad;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }

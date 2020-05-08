@@ -17,9 +17,22 @@ namespace AppConsole.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tb_venta()
         {
-            this.detalleVenta1 = new HashSet<detalleVenta>();
-            this.detalleVenta2 = new HashSet<detalleVenta>();
             this.detalleVenta3 = new HashSet<detalleVenta>();
+            this.detalleVenta4 = new HashSet<detalleVenta>();
+            this.detalleVenta5 = new HashSet<detalleVenta>();
+            this.detalleVenta6 = new HashSet<detalleVenta>();
+            this.detalleVenta7 = new HashSet<detalleVenta>();
+            this.detalleVenta8 = new HashSet<detalleVenta>();
+            this.detalleVenta9 = new HashSet<detalleVenta>();
+            this.detalleVenta10 = new HashSet<detalleVenta>();
+            this.detalleVenta11 = new HashSet<detalleVenta>();
+            this.detalleVenta12 = new HashSet<detalleVenta>();
+            this.detalleVenta13 = new HashSet<detalleVenta>();
+            this.detalleVenta14 = new HashSet<detalleVenta>();
+            this.detalleVenta15 = new HashSet<detalleVenta>();
+            this.detalleVenta16 = new HashSet<detalleVenta>();
+            this.detalleVenta17 = new HashSet<detalleVenta>();
+            this.detalleVenta18 = new HashSet<detalleVenta>();
         }
     
         public int idVenta { get; set; }
@@ -29,15 +42,43 @@ namespace AppConsole.Model
         public Nullable<decimal> totalVenta { get; set; }
         public Nullable<System.DateTime> fecha { get; set; }
     
-        public virtual detalleVenta detalleVenta { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<detalleVenta> detalleVenta1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<detalleVenta> detalleVenta2 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<detalleVenta> detalleVenta3 { get; set; }
         public virtual tb_cliente tb_cliente { get; set; }
         public virtual tb_documento tb_documento { get; set; }
         public virtual usuario usuario { get; set; }
+        public virtual detalleVenta detalleVenta { get; set; }
+        public virtual detalleVenta detalleVenta1 { get; set; }
+        public virtual detalleVenta detalleVenta2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<detalleVenta> detalleVenta3 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<detalleVenta> detalleVenta4 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<detalleVenta> detalleVenta5 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<detalleVenta> detalleVenta6 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<detalleVenta> detalleVenta7 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<detalleVenta> detalleVenta8 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<detalleVenta> detalleVenta9 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<detalleVenta> detalleVenta10 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<detalleVenta> detalleVenta11 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<detalleVenta> detalleVenta12 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<detalleVenta> detalleVenta13 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<detalleVenta> detalleVenta14 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<detalleVenta> detalleVenta15 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<detalleVenta> detalleVenta16 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<detalleVenta> detalleVenta17 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<detalleVenta> detalleVenta18 { get; set; }
     }
 }

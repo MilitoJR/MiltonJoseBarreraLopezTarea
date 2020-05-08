@@ -88,29 +88,9 @@ namespace AppConsole.Vista
         {
            
           
-            try
-            {
-                Calculo();
-            }
-            catch (Exception ex)
-            {
-
-            }
-
-            dtvVentas.Rows.Add(txtIdProducto.Text, txtNombreProducto.Text, txtPrecioProducto.Text, txtCantidad.Text, txtTotal.Text);
-            Double suma = 0;
-            for (int i = 0; i < dtvVentas.RowCount; i++)
-            {
-                String datosAOperar = dtvVentas.Rows[i].Cells[4].Value.ToString();
-                Double datosConvertidos = Double.Parse(datosAOperar);
-
-
-                suma += datosConvertidos;
-
-                txtTotalFinal.Text = suma.ToString();
-
-            }
-
+          
+            
+           
         }
 
         private void txtCantidad_TextChanged(object sender, EventArgs e)
@@ -137,7 +117,7 @@ namespace AppConsole.Vista
             catch (Exception ex)
             {
                 txtCantidad.Text = "0";
-                MessageBox.Show("No puedes operar datos menores que 0");
+                txtCantidad.Select();
                 
 
 
@@ -146,66 +126,145 @@ namespace AppConsole.Vista
 
         private void button3_Click(object sender, EventArgs e)
         {
-            using(sitema_ventasEntities bd= new sitema_ventasEntities())
+            using (sitema_ventasEntities bd = new sitema_ventasEntities())
             {
-                tb_venta tb_v = new tb_venta();
+                tb_venta tb_venta = new tb_venta();
                 String comboTipoDoc = cmbTipoDoc.SelectedValue.ToString();
                 String comboCliente = cmbClientes.SelectedValue.ToString();
-               
-                tb_v.idDocumento = int.Parse(comboTipoDoc);
-                tb_v.iDCliente = int.Parse(comboCliente);
-                tb_v.iDUsuario = 1;
 
-                tb_v.totalVenta = Convert.ToDecimal(txtTotalFinal.Text);
-                tb_v.fecha = Convert.ToDateTime(dtpFecha.Text);
-                bd.tb_venta.Add(tb_v);
+                tb_venta.idDocumento = int.Parse(comboTipoDoc);
+                tb_venta.iDCliente = int.Parse(comboCliente);
+                tb_venta.iDUsuario = 1;
+
+                tb_venta.totalVenta = Convert.ToDecimal(txtTotalFinal.Text);
+                tb_venta.fecha = Convert.ToDateTime(dtpFecha.Text);
+                bd.tb_venta.Add(tb_venta);
                 bd.SaveChanges();
 
                 detalleVenta dete = new detalleVenta();
 
+                for (int i = 0; i < dtvVentas.RowCount; i++)
+                {
+                    String IdProducto = dtvVentas.Rows[i].Cells[0].Value.ToString();
+                    int ProductosConvertidos = Convert.ToInt32(IdProducto);
 
+                    String cantidad = dtvVentas.Rows[i].Cells[3].Value.ToString();
+                    int cantidadConvertida = Convert.ToInt32(cantidad);
+
+                    
+                    String precio= dtvVentas.Rows[i].Cells[2].Value.ToString();
+                    Decimal PrecioConvertido = Convert.ToDecimal(precio);
+
+                    String total = dtvVentas.Rows[i].Cells[4].Value.ToString();
+                    Decimal TotalConvertido = Convert.ToDecimal(total);
+
+
+
+
+                    dete.idVenta = Convert.ToInt32(txtIDNumeracion.Text);
+                    dete.idProducto = ProductosConvertidos;
+                    dete.cantidad = cantidadConvertida;
+                    dete.precio = PrecioConvertido;
+                    dete.total = TotalConvertido;
+                    bd.detalleVenta.Add(dete);
+                    bd.SaveChanges();
+                }
+
+
+
+
+
+
+
+
+
+
+            
+            }
+            retornoid();
+
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(txtBusqueda.Text=="")
+            {
+                if (e.KeyCode==Keys.Enter)
+                {
+                    btnBuscar.PerformClick();
+                }
                 
-
-                
-                
-                    for (int i = 0; i < dtvVentas.RowCount; i++)
-                    {
-                        String IdProducto = dtvVentas.Rows[i].Cells[0].Value.ToString();
-                        int IdProductosConvertidos = Convert.ToInt32(IdProducto);
-
-                        String cantidad = dtvVentas.Rows[i].Cells[3].Value.ToString();
-                        int CantidadConvertidos = Convert.ToInt32(cantidad);
-
-                        String precio = dtvVentas.Rows[i].Cells[2].Value.ToString();
-                        Decimal precioConvertidos = Convert.ToDecimal(precio);
-
-                        String total = dtvVentas.Rows[i].Cells[4].Value.ToString();
-                        Decimal totalConvertidos = Convert.ToDecimal(total);
-
-
-                        dete.idVenta = int.Parse(txtIDNumeracion.Text);
-                        dete.idProducto = IdProductosConvertidos;
-                        dete.cantidad = CantidadConvertidos;
-                        dete.precio = precioConvertidos;
-                        dete.total = totalConvertidos;
-                        bd.detalleVenta.Add(dete);
-                        bd.SaveChanges();
-
-
-
-
-
-                    }
-                
-
-
-
+            }
+            else if (e.KeyCode == Keys.Enter)
+            {
+                using (sitema_ventasEntities bd = new sitema_ventasEntities())
+                {
+                    producto pr = new producto();
+                    int buscar = int.Parse(txtBusqueda.Text);
+                    pr = bd.producto.Where(idBuscar => idBuscar.idProducto == buscar).First();
+                    txtIdProducto.Text = Convert.ToString(pr.idProducto);
+                    txtNombreProducto.Text = Convert.ToString(pr.nombreProducto);
+                    txtPrecioProducto.Text = Convert.ToString(pr.precioProducto);
+                    txtCantidad.Focus();
+                    txtBusqueda.Text = "";
+                }
             }
         }
 
-        private void txtTotalFinal_TextChanged(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                Calculo();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            dtvVentas.Rows.Add(txtIdProducto.Text, txtNombreProducto.Text, txtPrecioProducto.Text, txtCantidad.Text, txtTotal.Text);
+            Double suma = 0;
+            for (int i = 0; i < dtvVentas.RowCount; i++)
+            {
+                String datosAOperar = dtvVentas.Rows[i].Cells[4].Value.ToString();
+                Double datosConvertidos = Double.Parse(datosAOperar);
+
+
+                suma += datosConvertidos;
+
+                txtTotalFinal.Text = suma.ToString();
+
+            }
+        }
+        int intentos = 1;
+        private void txtCantidad_KeyUp(object sender, KeyEventArgs e)
         {
 
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (intentos==2) {
+                    btnAgregar.PerformClick();
+                    txtBusqueda.Focus();
+                    txtIdProducto.Text = "";
+                    txtNombreProducto.Text = "";
+                    txtPrecioProducto.Text = "";
+                    txtTotal.Text = "";
+                    intentos = 0;
+                    txtCantidad.Text = "1";
+                    txtBusqueda.Focus();
+                }
+                intentos += 1;
+
+            }
+
         }
+
     }
 }
+
+
+      
+
+            
+            
+    
+

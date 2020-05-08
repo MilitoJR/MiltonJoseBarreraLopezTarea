@@ -18,7 +18,6 @@ namespace AppConsole.Model
         public producto()
         {
             this.detalleVenta = new HashSet<detalleVenta>();
-            this.detalleVenta1 = new HashSet<detalleVenta>();
         }
     
         public int idProducto { get; set; }
@@ -28,7 +27,5 @@ namespace AppConsole.Model
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<detalleVenta> detalleVenta { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<detalleVenta> detalleVenta1 { get; set; }
     }
 }

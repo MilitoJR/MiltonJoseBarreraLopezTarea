@@ -22,10 +22,24 @@ namespace AppConsole.Model
         public Nullable<decimal> total { get; set; }
     
         public virtual tb_venta tb_venta { get; set; }
-        public virtual producto producto { get; set; }
-        public virtual producto producto1 { get; set; }
         public virtual tb_venta tb_venta1 { get; set; }
         public virtual tb_venta tb_venta2 { get; set; }
+        public virtual producto producto { get; set; }
         public virtual tb_venta tb_venta3 { get; set; }
+        public virtual tb_venta tb_venta4 { get; set; }
+        public virtual tb_venta tb_venta5 { get; set; }
+        public virtual tb_venta tb_venta6 { get; set; }
+        public virtual tb_venta tb_venta7 { get; set; }
+        public virtual tb_venta tb_venta8 { get; set; }
+        public virtual tb_venta tb_venta9 { get; set; }
+        public virtual tb_venta tb_venta10 { get; set; }
+        public virtual tb_venta tb_venta11 { get; set; }
+        public virtual tb_venta tb_venta12 { get; set; }
+        public virtual tb_venta tb_venta13 { get; set; }
+        public virtual tb_venta tb_venta14 { get; set; }
+        public virtual tb_venta tb_venta15 { get; set; }
+        public virtual tb_venta tb_venta16 { get; set; }
+        public virtual tb_venta tb_venta17 { get; set; }
+        public virtual tb_venta tb_venta18 { get; set; }
     }
 }
