@@ -182,6 +182,8 @@ namespace AppConsole.Vista
             
             }
             retornoid();
+            dtvVentas.Rows.Clear();
+            txtTotalFinal.Text = "";
 
         }
 
@@ -207,6 +209,7 @@ namespace AppConsole.Vista
                     txtPrecioProducto.Text = Convert.ToString(pr.precioProducto);
                     txtCantidad.Focus();
                     txtBusqueda.Text = "";
+                    intentos = 2;
                 }
             }
         }
@@ -257,6 +260,12 @@ namespace AppConsole.Vista
             }
 
         }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
 
     }
 }
