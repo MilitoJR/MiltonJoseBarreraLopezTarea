@@ -35,5 +35,10 @@ namespace AppConsole.Vista
             ventas.MdiParent = this;
             ventas.Show();
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

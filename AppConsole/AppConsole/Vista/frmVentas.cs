@@ -38,7 +38,7 @@ namespace AppConsole.Vista
                     int idventa = iteradatosVenta.idVenta;
                     int suma = idventa + 1;
                     txtIDNumeracion.Text = suma.ToString();
-                    
+
                     //dtvUsuario.Rows.Add(iteradatosUsuario.email, iteradatosUsuario.contraseña);
                 }
 
@@ -50,12 +50,12 @@ namespace AppConsole.Vista
         }
         void CargarCombo()
         {
-            using(sitema_ventasEntities db = new sitema_ventasEntities())
+            using (sitema_ventasEntities db = new sitema_ventasEntities())
             {
                 var clientes = db.tb_cliente.ToList();
                 cmbClientes.DataSource = clientes;
                 cmbClientes.DisplayMember = "nombreCliente";
-                cmbClientes.ValueMember =  "iDCliente";
+                cmbClientes.ValueMember = "iDCliente";
 
 
 
@@ -64,7 +64,7 @@ namespace AppConsole.Vista
                 cmbTipoDoc.DisplayMember = "nombreDocumento";
                 cmbTipoDoc.ValueMember = "iDDocumento";
             }
-            
+
         }
 
         private void dataGridView1_AutoSizeColumnModeChanged(object sender, DataGridViewAutoSizeColumnModeEventArgs e)
@@ -80,23 +80,23 @@ namespace AppConsole.Vista
         private void button1_Click(object sender, EventArgs e)
         {
             frmBusqueda busqueda = new frmBusqueda();
-            
+
             busqueda.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-           
-          
-          
-            
-           
+
+
+
+
+
         }
 
         private void txtCantidad_TextChanged(object sender, EventArgs e)
         {
             Calculo();
-            
+
         }
         void Calculo()
         {
@@ -118,11 +118,31 @@ namespace AppConsole.Vista
             {
                 txtCantidad.Text = "0";
                 txtCantidad.Select();
-                
+
 
 
             }
+
         }
+        void calculartotalfinal() 
+        {
+
+            Double suma = 0;
+            for (int i = 0; i < dtvVentas.RowCount; i++)
+            {
+                String datosAOperar = dtvVentas.Rows[i].Cells[4].Value.ToString();
+                Double datosConvertidos = Double.Parse(datosAOperar);
+
+
+                suma += datosConvertidos;
+
+                txtTotalFinal.Text = suma.ToString();
+
+            }
+        }
+
+
+
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -225,18 +245,14 @@ namespace AppConsole.Vista
 
             }
             dtvVentas.Rows.Add(txtIdProducto.Text, txtNombreProducto.Text, txtPrecioProducto.Text, txtCantidad.Text, txtTotal.Text);
-            Double suma = 0;
-            for (int i = 0; i < dtvVentas.RowCount; i++)
-            {
-                String datosAOperar = dtvVentas.Rows[i].Cells[4].Value.ToString();
-                Double datosConvertidos = Double.Parse(datosAOperar);
+            calculartotalfinal();
 
+            dtvVentas.Refresh();
+            dtvVentas.ClearSelection();
+            int UltimaFila = dtvVentas.Rows.Count - 1;
+            dtvVentas.FirstDisplayedScrollingColumnIndex = UltimaFila;
+            dtvVentas.Rows[UltimaFila].Selected = true;
 
-                suma += datosConvertidos;
-
-                txtTotalFinal.Text = suma.ToString();
-
-            }
         }
         int intentos = 1;
         private void txtCantidad_KeyUp(object sender, KeyEventArgs e)
@@ -266,7 +282,15 @@ namespace AppConsole.Vista
             this.Hide();
         }
 
+        private void dtvVentas_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            calculartotalfinal();
+        }
 
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            dtvVentas.Rows.Remove(dtvVentas.CurrentRow);
+        }
     }
 }
 
