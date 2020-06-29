@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{75593291-7187-496B-A677-6F0DAF41AA79}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Ferreteria_I</RootNamespace>
+    <AssemblyName>Ferreteria_I</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.20.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\categoria.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\departamento.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\marca.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\municipio.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\pago.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\presentacion.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\producto.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\proveedor.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\rol.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\usuario.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\venta.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Categoria_V.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Categoria_V.Designer.cs">
+      <DependentUpon>Categoria_V.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Categoria_V_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Categoria_V_Add.Designer.cs">
+      <DependentUpon>Categoria_V_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Departamento_V.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Departamento_V.Designer.cs">
+      <DependentUpon>Departamento_V.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Departamento_V_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Departamento_V_Add.Designer.cs">
+      <DependentUpon>Departamento_V_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Marca_V.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Marca_V.Designer.cs">
+      <DependentUpon>Marca_V.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Marca_V_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Marca_V_Add.Designer.cs">
+      <DependentUpon>Marca_V_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MetodoP_V.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MetodoP_V.Designer.cs">
+      <DependentUpon>MetodoP_V.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MetodoP_V_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MetodoP_V_Add.Designer.cs">
+      <DependentUpon>MetodoP_V_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Municipio_V.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Municipio_V.Designer.cs">
+      <DependentUpon>Municipio_V.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Municipio_V_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Municipio_V_Add.Designer.cs">
+      <DependentUpon>Municipio_V_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Presentacion_V.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Presentacion_V.Designer.cs">
+      <DependentUpon>Presentacion_V.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Presentacion_V_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Presentacion_V_Add.Designer.cs">
+      <DependentUpon>Presentacion_V_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Producto_V.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Producto_V.Designer.cs">
+      <DependentUpon>Producto_V.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Producto_V_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Producto_V_Add.Designer.cs">
+      <DependentUpon>Producto_V_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Proveedor_V.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Proveedor_V.Designer.cs">
+      <DependentUpon>Proveedor_V.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Proveedor_V_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Proveedor_V_Add.Designer.cs">
+      <DependentUpon>Proveedor_V_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Rol_V.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Rol_V.Designer.cs">
+      <DependentUpon>Rol_V.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Rol_V_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Rol_V_Add.Designer.cs">
+      <DependentUpon>Rol_V_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Usuarios_V.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Usuarios_V.Designer.cs">
+      <DependentUpon>Usuarios_V.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Usuario_V_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Usuario_V_Add.Designer.cs">
+      <DependentUpon>Usuario_V_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Venta_V.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Venta_V.Designer.cs">
+      <DependentUpon>Venta_V.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Venta_V_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Venta_V_Add.Designer.cs">
+      <DependentUpon>Venta_V_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\Categoria_V.resx">
+      <DependentUpon>Categoria_V.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Categoria_V_Add.resx">
+      <DependentUpon>Categoria_V_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Departamento_V.resx">
+      <DependentUpon>Departamento_V.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Departamento_V_Add.resx">
+      <DependentUpon>Departamento_V_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Marca_V.resx">
+      <DependentUpon>Marca_V.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Marca_V_Add.resx">
+      <DependentUpon>Marca_V_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MetodoP_V.resx">
+      <DependentUpon>MetodoP_V.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MetodoP_V_Add.resx">
+      <DependentUpon>MetodoP_V_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Municipio_V.resx">
+      <DependentUpon>Municipio_V.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Municipio_V_Add.resx">
+      <DependentUpon>Municipio_V_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Presentacion_V.resx">
+      <DependentUpon>Presentacion_V.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Presentacion_V_Add.resx">
+      <DependentUpon>Presentacion_V_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Producto_V.resx">
+      <DependentUpon>Producto_V.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Producto_V_Add.resx">
+      <DependentUpon>Producto_V_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Proveedor_V.resx">
+      <DependentUpon>Proveedor_V.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Proveedor_V_Add.resx">
+      <DependentUpon>Proveedor_V_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Rol_V.resx">
+      <DependentUpon>Rol_V.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Rol_V_Add.resx">
+      <DependentUpon>Rol_V_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Usuarios_V.resx">
+      <DependentUpon>Usuarios_V.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Usuario_V_Add.resx">
+      <DependentUpon>Usuario_V_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Venta_V.resx">
+      <DependentUpon>Venta_V.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Venta_V_Add.resx">
+      <DependentUpon>Venta_V_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Ferreteria_I.Model.Categoria_Mod.datasource" />
+    <None Include="Properties\DataSources\Ferreteria_I.Model.Departamento_Mod.datasource" />
+    <None Include="Properties\DataSources\Ferreteria_I.Model.Marca_Mod.datasource" />
+    <None Include="Properties\DataSources\Ferreteria_I.Model.Municipio_Mod.datasource" />
+    <None Include="Properties\DataSources\Ferreteria_I.Model.Pago_Mod.datasource" />
+    <None Include="Properties\DataSources\Ferreteria_I.Model.Presentacion_Mod.datasource" />
+    <None Include="Properties\DataSources\Ferreteria_I.Model.Producto_Mod.datasource" />
+    <None Include="Properties\DataSources\Ferreteria_I.Model.Proveedor_Mod.datasource" />
+    <None Include="Properties\DataSources\Ferreteria_I.Model.Rol_Mod.datasource" />
+    <None Include="Properties\DataSources\Ferreteria_I.Model.Usuario_Mod.datasource" />
+    <None Include="Properties\DataSources\Ferreteria_I.Model.Usuario_Mod1.datasource" />
+    <None Include="Properties\DataSources\Ferreteria_I.Model.Usuario_Mod2.datasource" />
+    <None Include="Properties\DataSources\Ferreteria_I.Model.Usuario_Mod3.datasource" />
+    <None Include="Properties\DataSources\Ferreteria_I.Model.Venta_Mod.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Model\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
